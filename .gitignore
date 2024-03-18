@@ -1,5 +1,6 @@
 target
 tempo-data
+.idea
 .vscode
 opentelemetry-javaagent-all.jar
 hello-app.log
