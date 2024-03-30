@@ -5,7 +5,7 @@ services:
   hello-app:
     build: .
     image: hello-app:latest
-    container_name: hello-app
+    container_name: hello-app-
     hostname: hello-app
     depends_on:
       - collector
@@ -25,7 +25,8 @@ services:
       test: curl --write-out 'HTTP %{http_code}' --fail --silent --output /dev/null http://localhost:8888/hello
 
   collector:
-    image: otel/opentelemetry-collector:latest
+#    image: otel/opentelemetry-collector:latest
+    image: otel/opentelemetry-collector-contrib:0.96.0
     container_name: collector
     hostname: collector
     depends_on:
